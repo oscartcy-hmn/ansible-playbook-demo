@@ -1,0 +1,9 @@
+---
+- hosts: all
+  gather_facts: yes
+  tasks:
+    - ping:
+    - name: Cat hostname
+      command: cat /etc/hostname
+      register: hostname
+    - debug: msg="{{ hostname.stdout_lines}}"
