@@ -4,7 +4,7 @@
   sudo: yes
   tasks:
     - ping:
-    - name: Cat hostname
-      command: cat /etc/hostname
-      register: hostname
-    - debug: msg="{{ hostname.stdout_lines}}"
+    - name: Cat a file
+      command: cat {{ cat_file_path }}
+      register: cat_file
+    - debug: msg="{{ cat_file.stdout_lines}}"
