@@ -8,3 +8,4 @@
       command: cat {{ cat_file_path }}
       register: cat_file
     - debug: msg="{{ cat_file.stdout_lines}}"
+    - debug: msg="{{ group_name }}"
